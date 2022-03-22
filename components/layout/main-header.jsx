@@ -5,7 +5,7 @@ const MainHeader = () => {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link href="/">Forge Events</Link>
+        <Link href="/">Sorte Firkant</Link>
       </div>
       <nav className={classes.navigation}>
         <ul>

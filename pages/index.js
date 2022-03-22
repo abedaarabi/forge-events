@@ -1,12 +1,15 @@
+import Head from "next/head";
 import EventList from "../components/events/EventList";
 import { getFeaturedEvents } from "../helper/api-util";
 
 export default function Home({ featuredEvents }) {
   return (
     <div>
-      <ul>
-        <EventList items={featuredEvents} />
-      </ul>
+      <Head>
+        <title>SF Events</title>
+        <meta name="description" content="Find a lot of great events" />
+      </Head>
+      <EventList items={featuredEvents} />
     </div>
   );
 }
