@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import Head from "next/head";
 import { Fragment } from "react";
 import ResultsTitle from "../../components/event-detail/results-title";
 import EventList from "../../components/events/EventList";
@@ -25,10 +26,17 @@ const FilteredEventPage = (props) => {
       </div>
     );
   }
-  console.log(filterEvents);
+
   const date = new Date(numYear, numMonth - 1);
   return (
     <Fragment>
+      <Head>
+        <title>Filtered Events</title>
+        <meta
+          name="description"
+          content={`All event for ${numMonth}/ ${numYear}.`}
+        />
+      </Head>
       <ResultsTitle date={date} />
       <EventList items={filterEvents} />
     </Fragment>
@@ -60,7 +68,7 @@ export async function getServerSideProps(context) {
       props: {
         hasError: true,
       },
-      //Here we could redirect 
+      //Here we could redirect
       //   notFound: true,
       //   redirect:{
       //     destination:"/error"
