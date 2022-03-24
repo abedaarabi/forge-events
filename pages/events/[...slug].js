@@ -10,6 +10,7 @@ import { getFilteredEvents } from "../../helper/api-util";
 
 const FilteredEventPage = (props) => {
   const { hasError, filterEvents, numYear, numMonth } = props;
+
   if (hasError) {
     return (
       <div className="center">
@@ -30,13 +31,6 @@ const FilteredEventPage = (props) => {
   const date = new Date(numYear, numMonth - 1);
   return (
     <Fragment>
-      <Head>
-        <title>Filtered Events</title>
-        <meta
-          name="description"
-          content={`All event for ${numMonth}/ ${numYear}.`}
-        />
-      </Head>
       <ResultsTitle date={date} />
       <EventList items={filterEvents} />
     </Fragment>
