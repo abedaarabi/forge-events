@@ -6,6 +6,7 @@ import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
 import { getEventById, getFeaturedEvents } from "../../helper/api-util";
+import Comments from "../../components/input/comments";
 
 const EventDetails = ({ event }) => {
   if (!event) {
@@ -28,6 +29,7 @@ const EventDetails = ({ event }) => {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </Fragment>
   );
 };
